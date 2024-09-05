@@ -62,6 +62,7 @@ const GameControls = ({
         </>
       );
     default:
+      return <></>;
       break;
   }
 };
