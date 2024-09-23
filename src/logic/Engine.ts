@@ -1,8 +1,8 @@
 export enum GamePhase {
-  New = 1,
-  Rolling,
-  Break,
-  End,
+  New = "new",
+  Rolling = "rolling",
+  Break = "break",
+  End = "end",
 }
 
 export type State = {
