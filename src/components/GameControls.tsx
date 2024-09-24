@@ -1,7 +1,8 @@
+import { GamePhase } from "../logic/Engine";
 import Button from "./Button";
 
 interface Props {
-  gamePhase: string;
+  gamePhase: GamePhase;
   rollEnabled: boolean;
   endTurnEnabled: boolean;
   totalScore: number;
@@ -20,14 +21,13 @@ const GameControls = ({
   onNewGame,
 }: Props) => {
   switch (gamePhase) {
-    case "new":
+    case GamePhase.New:
       return (
         <div className="d-flex justify-content-center my-2">
           <Button onClick={onNewGame}>New Game</Button>
         </div>
       );
-      break;
-    case "rolling":
+    case GamePhase.Rolling:
       return (
         <div className="d-flex justify-content-center my-2">
           <Button onClick={onRollDice} enabled={rollEnabled}>
@@ -42,15 +42,13 @@ const GameControls = ({
           </Button>
         </div>
       );
-      break;
-    case "break":
+    case GamePhase.Break:
       return (
         <div className="d-flex justify-content-center my-2">
           <Button onClick={onRollDice}>Start Round</Button>
         </div>
       );
-      break;
-    case "end":
+    case GamePhase.End:
       return (
         <>
           <div className="d-flex justify-content-center">
@@ -61,9 +59,6 @@ const GameControls = ({
           </div>
         </>
       );
-    default:
-      return <></>;
-      break;
   }
 };
 
