@@ -5,7 +5,7 @@ export enum GamePhase {
   End = "end",
 }
 
-export type State = {
+type State = {
   gamePhase: GamePhase;
   gameStarted: boolean;
   roundCount: number;
@@ -26,7 +26,7 @@ type TurnScore = {
     direct: boolean;
 }
 
-export type Action = 
+type Action = 
   { type: "newGame" } |
   { type: "rollDice" } |
   { type: "endTurn" } |
